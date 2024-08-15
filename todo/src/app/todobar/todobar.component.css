@@ -1,0 +1,17 @@
+#todoinput{
+    margin-top: 20px;
+}
+h1{
+    text-align: center;
+}
+.container form {
+    display: flex;
+    justify-content: center;
+  }
+#submitbutton{
+    box-sizing: content-box;
+    margin-top: 20px;
+    margin-left: 5px;
+    height: 24px;
+    text-align: justify;
+}

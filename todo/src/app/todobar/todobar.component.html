@@ -1,1 +1,42 @@
-<p>todobar works!</p>
+
+<div class = "container">
+    <h1>TO DO</h1>
+
+    <form (ngSubmit)="load(taskform)" #taskform = "ngForm">
+        <div class="form-group">
+            <input type="text" placeholder="what's on your mind??" class="form-control" id="todoinput" ngModel name="task" required>
+            <div *ngIf="taskform.dirty && taskform.invalid" id="warning" class="form-text text-danger">Required Field</div>
+        </div>
+        
+        
+        <button [disabled]="taskform.invalid" id="submitbutton" type="submit" class="btn btn-primary">+</button>
+    </form>
+    
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let i of taskarray, index as ind">
+
+            <td>{{i.taskname}}</td>
+            <td>
+                <input class="form-check-input" (change)="oncheck(ind)" type="checkbox" value="" id="flexCheckDefault">
+            </td>
+            
+            <td>
+                <button class="btn btn-sm btn-danger" (click)="delete(ind)">delete</button>
+            </td>
+
+            
+            
+          </tr>
+          
+        </tbody>
+      </table>
+</div>
