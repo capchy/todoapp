@@ -4,9 +4,17 @@
 h1{
     text-align: center;
 }
+table {
+    
+    width: 70%; /* Adjust the width as needed */
+    margin: 0 auto;
+  }
+
+
 .container form {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
   }
 #submitbutton{
     box-sizing: content-box;
@@ -14,4 +22,7 @@ h1{
     margin-left: 5px;
     height: 24px;
     text-align: justify;
+}
+#crossed{
+    text-decoration: line-through;
 }

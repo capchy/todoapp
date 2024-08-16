@@ -14,23 +14,24 @@
     
 
     <table class="table">
-        <thead>
+        <!-- <thead>
           <tr>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
+            <th scope="col">task</th>
+            <th scope="col">completed</th>
             
           </tr>
-        </thead>
+        </thead> -->
         <tbody>
           <tr *ngFor = "let i of taskarray, index as ind">
 
-            <td>{{i.taskname}}</td>
+            <td [hidden]="i.iscomplete">{{i.taskname}}</td>
+            <td id="crossed" [hidden]="!i.iscomplete">{{i.taskname}} </td>
             <td>
                 <input class="form-check-input" (change)="oncheck(ind)" type="checkbox" value="" id="flexCheckDefault">
             </td>
             
             <td>
-                <button class="btn btn-sm btn-danger" (click)="delete(ind)">delete</button>
+                <button class="btn btn-sm btn-danger" (click)="delete(ind)" id ="albutton">delete</button>
             </td>
 
             
